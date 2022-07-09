@@ -61,4 +61,4 @@ These apis implement user-management functionality, where user can create accoun
 
 
 ### API Documentation
-You can follow `/protected/v1/swagger-ui.html` to find all information about APIs.
+You can follow `/api/v1/swagger-ui.html` to find all information about APIs.
