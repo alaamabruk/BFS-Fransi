@@ -18,6 +18,19 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
 
 
+
+springdoc:
+  api-docs:
+    path: /swagger/experience-${spring.application.name}-api-1.0.yml
+    enabled: true
+  swagger-ui:
+    path: '/swagger-ui'
+    url: /swagger/experience-${spring.application.name}-api-1.0.yml
+    doc-expansion: none
+    disable-swagger-default-url: true
+  packagesToScan: 'bfs.digital.fransi.api.controller'
+  pathsToMatch: '/protected/**'
+
 server:
   port: 8080
 

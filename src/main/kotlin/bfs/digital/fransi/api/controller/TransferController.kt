@@ -5,6 +5,7 @@ import bfs.digital.fransi.entity.AccountDetails
 import bfs.digital.fransi.entity.TransactionDetails
 import bfs.digital.fransi.service.AccountService
 import bfs.digital.fransi.service.TransferService
+import io.swagger.annotations.Api
 import io.swagger.annotations.ApiResponse
 import io.swagger.annotations.ApiResponses
 import org.slf4j.LoggerFactory
@@ -13,7 +14,7 @@ import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
 import javax.validation.Valid
 
-
+@Api(value = "/transfer-controller", tags = ["TransferController API"])
 @RestController
 @RequestMapping("/protected/v1")
 @Validated
@@ -28,10 +29,8 @@ class TransferController(
     }
 
     @ApiResponses(
-        value = [ApiResponse(code = 201, message = "Ok", response = TransactionDetails::class), ApiResponse(
-            code = 400,
-            message = "Required field is missing."
-        )]
+        value = [ApiResponse(code = 200, message = "Ok", response = TransactionDetails::class),
+                 ApiResponse(code = 400, message = "Required field is missing.")]
     )
     @PostMapping("/account/{id}/transfer")
     fun transferFunds(

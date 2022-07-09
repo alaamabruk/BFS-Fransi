@@ -1,12 +1,13 @@
 package bfs.digital.fransi.api.controller
 
 import bfs.digital.fransi.api.model.AccountDto
+import bfs.digital.fransi.api.model.OBWriteAccount1
 import bfs.digital.fransi.entity.AccountDetails
 import bfs.digital.fransi.exceptions.ErrorCode
 import bfs.digital.fransi.exceptions.InvalidParameterException
 import bfs.digital.fransi.service.AccountService
 import bfs.digital.fransi.util.ACCT_MIN_BALANCE
-import bfs.digital.fransi.api.model.OBWriteAccount1
+import io.swagger.annotations.Api
 import io.swagger.annotations.ApiOperation
 import io.swagger.annotations.ApiResponse
 import io.swagger.annotations.ApiResponses
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.*
 import java.math.BigDecimal
 import javax.validation.Valid
 
-
+@Api(value = "/account-controller", tags = ["AccountController API"])
 @RestController
 @RequestMapping("/protected/v1")
 @Validated
@@ -28,14 +29,11 @@ class AccountController(private val accountService: AccountService) {
         private val log = LoggerFactory.getLogger(AccountController::class.toString())
     }
 
-    @ApiOperation(value = "create new API")
+    @ApiOperation(value = "create new account API")
     @ApiResponses(
-        value = [ApiResponse(
-            code = 200, message = "Ok", response = AccountDto::class
-        ),
-            ApiResponse(code = 400, message = "Provided request is invalid"), ApiResponse(
-                code = 404,
-                message = "Account not found"
+        value = [ApiResponse(code = 200, message = "Ok", response = AccountDto::class),
+                 ApiResponse(code = 400, message = "Provided request is invalid"),
+                 ApiResponse(code = 404, message = "Account not found"
             )]
     )
     @PostMapping("/account")
@@ -57,13 +55,11 @@ class AccountController(private val accountService: AccountService) {
     }
 
 
+    @ApiOperation(value = "get account API")
     @ApiResponses(
-        value = [ApiResponse(
-            code = 200, message = "Ok", response = AccountDto::class
-        ),
-            ApiResponse(code = 400, message = "Provided request is invalid"), ApiResponse(
-                code = 404,
-                message = "Account not found"
+        value = [ApiResponse(code = 200, message = "Ok", response = AccountDto::class),
+            ApiResponse(code = 400, message = "Provided request is invalid"),
+            ApiResponse(code = 404, message = "Account not found"
             )]
     )
     @GetMapping("/account/{id}")
