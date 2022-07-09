@@ -65,12 +65,12 @@ class TransferServiceImpl(
         }
     }
 
-    fun isInsufficientBalance(source: AccountDetails?, request: OBWriteTransfer2): Boolean {
+    private fun isInsufficientBalance(source: AccountDetails?, request: OBWriteTransfer2): Boolean {
         return source?.currentBalance?.compareTo(request.amount)!! < 0
     }
 
 
-    fun debitTransaction(account: AccountDetails?, accountTransaction: TransactionDetails) {
+    private fun debitTransaction(account: AccountDetails?, accountTransaction: TransactionDetails) {
         var account = account
         log.info("Debit Transaction from Account:")
         account = accountService.getAccountById(account?.id!!)!!
@@ -100,7 +100,7 @@ class TransferServiceImpl(
     }
 
 
-    fun creditTransaction(account: AccountDetails?, accountTransaction: TransactionDetails) {
+    private fun creditTransaction(account: AccountDetails?, accountTransaction: TransactionDetails) {
         var account: AccountDetails? = account
         log.info("Credit Transaction to Account:")
         account = accountService.getAccountById(account?.id!!)!!

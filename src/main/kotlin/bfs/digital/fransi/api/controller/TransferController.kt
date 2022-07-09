@@ -1,10 +1,10 @@
 package bfs.digital.fransi.api.controller
 
+import bfs.digital.bank.api.model.OBWriteTransfer2
 import bfs.digital.fransi.entity.AccountDetails
 import bfs.digital.fransi.entity.TransactionDetails
 import bfs.digital.fransi.service.AccountService
 import bfs.digital.fransi.service.TransferService
-import bfs.digital.bank.api.model.OBWriteTransfer2
 import io.swagger.annotations.ApiResponse
 import io.swagger.annotations.ApiResponses
 import org.slf4j.LoggerFactory
@@ -38,10 +38,9 @@ class TransferController(
         @PathVariable("id") id: Long,
         @RequestBody transfer: @Valid OBWriteTransfer2
     ): ResponseEntity<List<TransactionDetails?>?>? {
+        log.info("[{}] transfer Funds  API hit")
         val fromAccount: AccountDetails? = accountService.getAccountById(id)
         val toAccount: AccountDetails? = accountService.getAccountById(transfer.toAccountId)
-        val transaction = TransactionDetails()
-        transaction.amount = transfer.amount
 
         transferService.transfer(id, transfer)
         log.info(

@@ -7,7 +7,7 @@ import bfs.digital.bank.api.model.OBWriteTransfer2
 interface TransferService {
 
     /**
-     * Account Service Interface
+     * Transfer Service Interface
      *
      * Expose all functional methods and provide implementations
      *
