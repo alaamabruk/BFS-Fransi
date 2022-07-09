@@ -3,16 +3,16 @@
 
 Account Transaction Task 
 notes the application
-i make a simple Spring boot app for User Acount Transaction and using spring boot.
+Simple Spring boot app for User Acount Transaction.
 
-using Spring Boot , Kotlin , Rest Apis , H2 as the DB!.
+using Spring Boot , Kotlin , Rest Apis , H2 as the DB!, swagger API , Junit .
 
 application services :
  * BSF_Fransi : runs on port 8080
 steps
 1.prepare your enviroment if you work locally or on a production :
   * clone the git repository
-  * setup java ide (intelij,etc)
+  * setup java idea (intelij,etc)
   * import the BSF_Fransi microservice in the ide and download dependencies.
 2. run the microservice.
 3. you can now work with the rest apis.
