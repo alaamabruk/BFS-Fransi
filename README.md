@@ -60,9 +60,5 @@ These apis implement user-management functionality, where user can create accoun
    JSON Request:  { "toAccountId":"1", "amount": 50 }
 
 
-## Swagger
-Swagger documentation is available using this link
-```sh
-curl --request GET \
-     --url 'http://localhost:8080/swagger-ui/index.html'
-```
+### API Documentation
+You can follow `/protected/v1/swagger-ui.html` to find all information about APIs.
