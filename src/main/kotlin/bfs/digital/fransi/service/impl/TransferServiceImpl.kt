@@ -29,28 +29,25 @@ class TransferServiceImpl(
 
 
     override fun transfer(id: Long?, transfer: OBWriteTransfer2) {
-        validateAccountNumbers(id , transfer)
+        validateAccountNumbers(id, transfer)
         var fromAccount: AccountDetails? = accountService.getAccountById(id!!)
-        if (isInsufficientBalance(fromAccount , transfer)){
+        if (isInsufficientBalance(fromAccount, transfer)) {
             log.error("Insufficient funds")
             throw InvalidParameterException(ErrorCode.INSUFFICIENT_FUNDS)
         }
         var toAccount: AccountDetails? = accountService.getAccountById(transfer.toAccountId)
-        val accountTransaction = TransactionDetails()
-        accountTransaction.amount = transfer.amount
+
         log.debug("Transfer Between Accounts:")
 
         val fromTransaction = TransactionDetails()
-        fromTransaction.amount = accountTransaction.amount
-        fromTransaction.transactionDate = accountTransaction.transactionDate
+        fromTransaction.amount = transfer.amount
         fromTransaction.description = "Transfer to Account (" + toAccount?.accountNumber.toString() + ")"
         fromTransaction.transactionType1Code = OBExternalTransactionType1Code.DEBIT
         debitTransaction(fromAccount, fromTransaction)
 
 
         val toTransaction = TransactionDetails()
-        toTransaction.amount = accountTransaction.amount
-        toTransaction.transactionDate = accountTransaction.transactionDate
+        toTransaction.amount = transfer.amount
         toTransaction.description = "Transfer from Account (" + fromAccount?.accountNumber.toString() + ")"
         toTransaction.transactionType1Code = OBExternalTransactionType1Code.CREDIT
         creditTransaction(toAccount, toTransaction)
@@ -74,15 +71,15 @@ class TransferServiceImpl(
         var account = account
         log.info("Debit Transaction from Account:")
         account = accountService.getAccountById(account?.id!!)!!
-        val transactionList: MutableList<TransactionDetails>? = account?.accountTransactionList
-        var balance: BigDecimal? = account?.currentBalance
+        val transactionList: MutableList<TransactionDetails>? = account.accountTransactionList
+        var balance: BigDecimal? = account.currentBalance
         var amount: BigDecimal? = accountTransaction.amount
 
         log.info(" Convert amount to a negative number since it is a withdraw")
         val negOne = BigDecimal(-1)
         amount = amount?.multiply(negOne)
         balance = balance?.add(amount)
-        account?.currentBalance = balance
+        account.currentBalance = balance
 
         log.info("Check if the date was already set, if not set to current date time.")
         if (accountTransaction.transactionDate == null) {
@@ -92,7 +89,7 @@ class TransferServiceImpl(
         accountTransaction.amount = amount
         accountTransaction.account = account
         transactionList?.add(accountTransaction)
-        account?.accountTransactionList = transactionList
+        account.accountTransactionList = transactionList
 
         log.info("Debit Transaction success Account: Update Account details")
         accountRepository.save(account)
