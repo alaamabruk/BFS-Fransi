@@ -25,7 +25,7 @@ Spring Boot - Application Framework
 Swagger - API Documentation
 Apache Maven - Software Project Management
 H2 Database Engine - In-Memory Database
-JUnit 5 - Unit Testing Framework (Coverage 82%)
+JUnit 5 - Unit Testing Framework (Coverage 87%)
 
 
 
