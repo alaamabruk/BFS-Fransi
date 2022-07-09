@@ -2,12 +2,12 @@ package bfs.digital.fransi.controller
 
 
 import bfs.digital.fransi.api.controller.AccountController
-import bfs.digital.fransi.api.model.enums.OBExternalAccountType1Code
+import bfs.digital.fransi.enums.OBExternalAccountType1Code
 import bfs.digital.fransi.exceptions.InvalidParameterException
 import bfs.digital.fransi.service.AccountService
 import bfs.digital.fransi.util.TestUtil.anyObject
 import bfs.digital.fransi.util.TestUtil.getAccountDto
-import bfs.digital.bank.api.model.OBWriteAccount1
+import bfs.digital.fransi.api.model.OBWriteAccount1
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

@@ -1,6 +1,6 @@
 package bfs.digital.fransi.entity
 
-import bfs.digital.fransi.api.model.enums.OBExternalAccountType1Code
+import bfs.digital.fransi.enums.OBExternalAccountType1Code
 import com.fasterxml.jackson.annotation.JsonFormat
 import com.fasterxml.jackson.annotation.JsonIgnore
 import org.springframework.format.annotation.DateTimeFormat

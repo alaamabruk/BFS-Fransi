@@ -7,7 +7,7 @@ import bfs.digital.fransi.service.impl.TransferServiceImpl
 import bfs.digital.fransi.util.TestUtil.anyObject
 import bfs.digital.fransi.util.TestUtil.getAccountDetails
 import bfs.digital.fransi.util.TestUtil.getTransactionDetails
-import bfs.digital.bank.api.model.OBWriteTransfer2
+import bfs.digital.fransi.api.model.OBWriteTransfer2
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

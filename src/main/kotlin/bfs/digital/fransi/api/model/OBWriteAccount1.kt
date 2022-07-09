@@ -1,6 +1,6 @@
-package bfs.digital.bank.api.model
+package bfs.digital.fransi.api.model
 
-import bfs.digital.fransi.api.model.enums.OBExternalAccountType1Code
+import bfs.digital.fransi.enums.OBExternalAccountType1Code
 import io.swagger.v3.oas.annotations.media.Schema
 import java.math.BigDecimal
 import javax.validation.Valid

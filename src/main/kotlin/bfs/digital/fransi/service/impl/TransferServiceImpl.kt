@@ -9,8 +9,8 @@ import bfs.digital.fransi.repository.AccountRepository
 import bfs.digital.fransi.repository.TransactionRepository
 import bfs.digital.fransi.service.AccountService
 import bfs.digital.fransi.service.TransferService
-import bfs.digital.bank.api.model.OBWriteTransfer2
-import bfs.digital.bank.api.model.enums.OBExternalTransactionType1Code
+import bfs.digital.fransi.api.model.OBWriteTransfer2
+import bfs.digital.fransi.enums.OBExternalTransactionType1Code
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import java.math.BigDecimal

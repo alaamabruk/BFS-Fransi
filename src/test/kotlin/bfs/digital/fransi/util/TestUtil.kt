@@ -1,7 +1,7 @@
 package bfs.digital.fransi.util
 
 import bfs.digital.fransi.api.model.AccountDto
-import bfs.digital.fransi.api.model.enums.OBExternalAccountType1Code
+import bfs.digital.fransi.enums.OBExternalAccountType1Code
 import bfs.digital.fransi.entity.AccountDetails
 import bfs.digital.fransi.entity.TransactionDetails
 import org.mockito.Mockito

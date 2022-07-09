@@ -1,6 +1,6 @@
 package bfs.digital.fransi.api.model
 
-import bfs.digital.fransi.api.model.enums.OBExternalAccountType1Code
+import bfs.digital.fransi.enums.OBExternalAccountType1Code
 import java.math.BigDecimal
 import java.util.*
 

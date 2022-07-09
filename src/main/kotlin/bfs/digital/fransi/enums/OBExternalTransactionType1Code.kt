@@ -1,4 +1,4 @@
-package bfs.digital.bank.api.model.enums
+package bfs.digital.fransi.enums
 
 enum class OBExternalTransactionType1Code {
     DEBIT, CREDIT

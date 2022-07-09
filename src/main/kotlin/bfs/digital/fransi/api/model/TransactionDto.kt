@@ -1,6 +1,6 @@
 package bfs.digital.fransi.api.model
 
-import bfs.digital.bank.api.model.enums.OBExternalTransactionType1Code
+import bfs.digital.fransi.enums.OBExternalTransactionType1Code
 import java.math.BigDecimal
 import java.util.*
 

@@ -6,7 +6,7 @@ import bfs.digital.fransi.exceptions.ErrorCode
 import bfs.digital.fransi.exceptions.InvalidParameterException
 import bfs.digital.fransi.service.AccountService
 import bfs.digital.fransi.util.ACCT_MIN_BALANCE
-import bfs.digital.bank.api.model.OBWriteAccount1
+import bfs.digital.fransi.api.model.OBWriteAccount1
 import io.swagger.annotations.ApiOperation
 import io.swagger.annotations.ApiResponse
 import io.swagger.annotations.ApiResponses

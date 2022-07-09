@@ -1,7 +1,7 @@
 package bfs.digital.fransi.service
 
 
-import bfs.digital.fransi.api.model.enums.OBExternalAccountType1Code
+import bfs.digital.fransi.enums.OBExternalAccountType1Code
 import bfs.digital.fransi.entity.AccountDetails
 import bfs.digital.fransi.exceptions.InvalidParameterException
 import bfs.digital.fransi.repository.AccountRepository

@@ -1,6 +1,6 @@
 package bfs.digital.fransi.api.controller
 
-import bfs.digital.bank.api.model.OBWriteTransfer2
+import bfs.digital.fransi.api.model.OBWriteTransfer2
 import bfs.digital.fransi.entity.AccountDetails
 import bfs.digital.fransi.entity.TransactionDetails
 import bfs.digital.fransi.service.AccountService
