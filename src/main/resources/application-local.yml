@@ -18,7 +18,6 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
 
 
-
 springdoc:
   api-docs:
     path: /swagger/experience-${spring.application.name}-api-1.0.yml
