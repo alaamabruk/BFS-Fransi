@@ -47,15 +47,15 @@ These apis implement user-management functionality, where user can create accoun
 
 # End Point :
 
-1) localhost:8080//protected/v1/account   
+1) localhost:8080/protected/v1/accounts   
    User can create an account sample Json for /create account (POST):
    
    JSON Request: { "accountName":"ali", "openingDeposit": 100, "accountType":"SAVINGS" }
 
-2) localhost:8080/protected/v1/account/{id}   
+2) localhost:8080/protected/v1/accounts/{id}   
    User Can get account details by account Id (GET).
 
-3) localhost:8080/protected/v1/account/{id}/transfer 
+3) localhost:8080/protected/v1/accounts/{id}/transfer 
    User transfer money from his account to another account(POST).  
    JSON Request:  { "toAccountId":"1", "amount": 50 }
 

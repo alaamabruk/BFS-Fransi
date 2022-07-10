@@ -32,7 +32,7 @@ class TransferController(
         value = [ApiResponse(code = 200, message = "Ok", response = TransactionDetails::class),
                  ApiResponse(code = 400, message = "Required field is missing.")]
     )
-    @PostMapping("/account/{id}/transfer")
+    @PostMapping("/accounts/{id}/transfer")
     fun transferFunds(
         @PathVariable("id") id: Long,
         @RequestBody transfer: @Valid OBWriteTransfer2

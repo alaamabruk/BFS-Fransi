@@ -2,6 +2,7 @@ package bfs.digital.fransi.service.impl
 
 
 import bfs.digital.fransi.api.model.AccountDto
+import bfs.digital.fransi.api.model.TransactionDto
 import bfs.digital.fransi.entity.AccountDetails
 import bfs.digital.fransi.exceptions.ErrorCode
 import bfs.digital.fransi.exceptions.InvalidParameterException
@@ -63,7 +64,13 @@ class AccountServiceImpl(private val accountRepository: AccountRepository) : Acc
             id = accountEntity?.id, name = accountEntity?.name, accountNumber = accountEntity?.accountNumber,
             openingBalance = accountEntity?.openingBalance, dateOpened = accountEntity?.dateOpened,
             currentBalance = accountEntity?.currentBalance, accountType = accountEntity?.accountType,
+            accountTransactionList = toAccountTransactions(accountEntity)
         )
+
+
+     fun toAccountTransactions(accountEntity: AccountDetails?): MutableList<TransactionDto>? {
+          return accountEntity?.accountTransactionList as MutableList<TransactionDto>?
+     }
 
 
 }

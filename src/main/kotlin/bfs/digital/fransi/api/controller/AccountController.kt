@@ -36,7 +36,7 @@ class AccountController(private val accountService: AccountService) {
                  ApiResponse(code = 404, message = "Account not found"
             )]
     )
-    @PostMapping("/account")
+    @PostMapping("/accounts")
     fun createAccount(@RequestBody account: @Valid OBWriteAccount1?): ResponseEntity<AccountDto>? {
         log.info("[{}] Create accounts API hit")
         log.debug("[{}]createAccount with account [{}]", account)
@@ -62,7 +62,7 @@ class AccountController(private val accountService: AccountService) {
             ApiResponse(code = 404, message = "Account not found"
             )]
     )
-    @GetMapping("/account/{id}")
+    @GetMapping("/accounts/{id}")
     fun getAccount(@PathVariable("id") id: Long): ResponseEntity<AccountDto>? {
         log.info("[{}] get account by id API hit")
         val account: AccountDto? = accountService.getAccount(id)
