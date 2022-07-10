@@ -48,7 +48,7 @@ These apis implement user-management functionality, where user can create accoun
 # End Point :
 
 1) localhost:8080//protected/v1/account   
-   User can craete an account sample Json for /create account (POST):
+   User can create an account sample Json for /create account (POST):
    
    JSON Request: { "accountName":"ali", "openingDeposit": 100, "accountType":"SAVINGS" }
 
@@ -61,4 +61,4 @@ These apis implement user-management functionality, where user can create accoun
 
 
 ### API Documentation
-You can follow `/api/v1/swagger-ui.html` to find all information about APIs.
+You can follow `/swagger-ui.html` to find all information about APIs.
